@@ -1,0 +1,15 @@
+<h1 class="h1head">Job Listings</h1>
+{{#each jobs}}
+  <div class="job-card">
+    <h2>{{this.title}}</h2>
+    <p><strong>{{this.company}}</strong> - {{this.location}}</p>
+    <p>Salary: {{salary}}</p> 
+    <p>{{this.description}}</p>
+    <div class="job-actions">
+      <a href="/jobs/{{this._id}}/edit" class="btn-edit-job">Edit</a>
+      <form action="/jobs/{{this._id}}/delete" method="post" style="display:inline;">
+        <button type="submit" class="btn-delete-job">Delete</button>
+      </form>
+    </div>
+  </div>
+{{/each}}

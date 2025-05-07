@@ -1,0 +1,29 @@
+<h1>Edit Job</h1>
+<div class="edit-job-container">
+  <form action="/jobs/{{job._id}}" method="post" class="edit-job-form">
+    <div class="form-group">
+      <label for="title">Job Title:</label>
+      <input type="text" id="title" name="title" value="{{job.title}}" required class="form-input">
+    </div>
+    <div class="form-group">
+      <label for="company">Company:</label>
+      <input type="text" id="company" name="company" value="{{job.company}}" required class="form-input">
+    </div>
+    <div class="form-group">
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" value="{{job.location}}" required class="form-input">
+    </div>
+    <div class="form-group">
+      <label for="salary">Salary:</label>
+      <input type="text" id="salary" name="salary" value="{{job.salary}}" placeholder="Enter salary" required inputmode="text" class="form-input">
+    </div>
+    <div class="form-group">
+      <label for="description">Job Description:</label>
+      <textarea id="description" name="description" required class="form-textarea">{{job.description}}</textarea>
+    </div>
+    <div class="form-buttons">
+      <button type="submit" class="btn btn-primary">Update Job</button>
+      <a href="/" class="btn btn-secondary">Cancel</a>
+    </div>
+  </form>
+</div>
