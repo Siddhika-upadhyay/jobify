@@ -1,4 +1,23 @@
-<h1 class="h1head">Job Listings</h1>
+<div class="welcome-box">
+  <h1 class="welcome-heading cal-sans-regular">Welcome to Jobify</h1>
+  <p class="welcome-subheading open-sans-400">Get the right job you deserve</p>
+</div>
+
+<div class="boxes-container">
+  <div class="box">
+    <h2>I'm a Job Seeker</h2>
+    <p>Browse and apply to the latest job openings</p>
+    {{#if user}}
+      <a href="/jobs" class="btn btn-primary start-searching-btn">Job Listing</a>
+    {{else}}
+      <a href="/login" class="btn btn-primary start-searching-btn">Start Searching</a>
+    {{/if}}
+  </div>
+  <div class="box">
+    <!-- Placeholder for second box content -->
+  </div>
+</div>
+
 {{#each jobs}}
   <div class="job-card">
     <h2>{{this.title}}</h2>
