@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const jobSchema = new mongoose.Schema({
   title: String,
@@ -8,4 +8,4 @@ const jobSchema = new mongoose.Schema({
   description: String,
 });
 
-module.exports = mongoose.model("Job", jobSchema);
+module.exports = mongoose.model('Job', jobSchema);

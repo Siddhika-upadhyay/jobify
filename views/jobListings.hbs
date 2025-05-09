@@ -1,0 +1,48 @@
+<h1 class="h1head">Job Listings</h1>
+{{#each jobs}}
+  <div class="job-card">
+    <h2>{{this.title}}</h2>
+    <p><strong>{{this.company}}</strong> - {{this.location}}</p>
+    <p>Salary: {{this.salary}}</p>
+    <p>{{this.description}}</p>
+    <div class="apply-box">
+      <button class="btn btn-apply" data-job-id="{{this._id}}">Apply Now</button>
+    </div>
+  </div>
+{{/each}}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const applyButtons = document.querySelectorAll('.btn-apply');
+
+    applyButtons.forEach(button => {
+      button.addEventListener('click', async function (event) {
+        const jobId = event.target.getAttribute('data-job-id');
+        const confirmApply = confirm('Do you want to apply for this job?');
+        if (!confirmApply) return;
+
+        try {
+          const res = await fetch(`/apply/${jobId}`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            }
+          });
+
+          if (res.status === 401) {
+            const data = await res.json();
+            window.location.href = data.redirect;
+          } else if (res.ok) {
+            alert("Application submitted successfully!");
+            event.target.textContent = "Applied";
+            event.target.disabled = true;
+          } else {
+            alert("Failed to apply.");
+          }
+        } catch (err) {
+          alert("Error while applying.");
+        }
+      });
+    });
+  });
+</script>
