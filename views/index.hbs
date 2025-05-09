@@ -5,30 +5,16 @@
 
 <div class="boxes-container">
   <div class="box">
-    <h2>I'm a Job Seeker</h2>
-    <p>Browse and apply to the latest job openings</p>
-    {{#if user}}
-      <a href="/jobs" class="btn btn-primary start-searching-btn">Job Listing</a>
-    {{else}}
-      <a href="/login" class="btn btn-primary start-searching-btn">Start Searching</a>
-    {{/if}}
+    <h2>Looking for a Job</h2>
+    <p>Browse through current job listings and find your next great opportunity.</p>
+   <a href="/jobs" class="btn btn-primary start-searching-btn">Start Searching</a>
+
   </div>
   <div class="box">
-    <!-- Placeholder for second box content -->
+    <h2>Looking to Hire?</h2>
+    <p>Find qualified professionals for your team.</p>
+   <a href="/jobs/new" class="btn btn-primary post-job-btn">Post a Job</a>
+
   </div>
 </div>
 
-{{#each jobs}}
-  <div class="job-card">
-    <h2>{{this.title}}</h2>
-    <p><strong>{{this.company}}</strong> - {{this.location}}</p>
-    <p>Salary: {{salary}}</p> 
-    <p>{{this.description}}</p>
-    <div class="job-actions">
-      <a href="/jobs/{{this._id}}/edit" class="btn-edit-job">Edit</a>
-      <form action="/jobs/{{this._id}}/delete" method="post" style="display:inline;">
-        <button type="submit" class="btn-delete-job">Delete</button>
-      </form>
-    </div>
-  </div>
-{{/each}}

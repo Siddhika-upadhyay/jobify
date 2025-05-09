@@ -435,8 +435,15 @@ footer p {
 .boxes-container {
   display: flex;
   justify-content: center;
+  align-items: stretch;
   gap: 40px;
   margin-bottom: 40px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .box {
@@ -462,20 +469,37 @@ footer p {
 
 .start-searching-btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 12px 24px;
-  font-size: 1.2rem;
-  font-weight: 600;
+  padding: 10px 20px;
+  font-size: 1.1rem;
   color: white;
-  background-color: #48A6A7;
+  background-color: #006a71;
   border: none;
-  border-radius: 6px;
-  text-decoration: none;
+  border-radius: 5px;
   cursor: pointer;
+  text-decoration: none;
+  text-align: center;
   transition: background-color 0.3s ease;
 }
 
 .start-searching-btn:hover {
+  background-color: #3e8e41;
+}
+
+.post-job-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  color: white;
+  background-color: #006a71;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.post-job-btn:hover {
   background-color: #3e8e41;
 }
 
