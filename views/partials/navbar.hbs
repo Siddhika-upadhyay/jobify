@@ -4,17 +4,24 @@
 <nav>
   <a href="/" style="font-size: 36px;">Jobify</a>
 
-  <form class="search-bar" action="/search" method="GET">
-    <input type="text" name="keyword" placeholder="Search jobs...">
-    <button type="submit">Search</button>
+  <form class="search-bar" action="/search" method="GET" style="flex-grow: 1; margin: 0 20px;">
+    <input type="text" name="keyword" placeholder="Search jobs..." style="padding: 5px 10px;">
+    <button type="submit" style="padding: 5px 10px;">Search</button>
   </form>
 
   <div class="auth-links">
-    <a href="/login">
-      <i class="fas fa-sign-in-alt"></i>
-    </a>
-    <a href="/signup">
-      <i class="fas fa-user-plus"></i> 
-    </a>
+    {{#if user}}
+      <a href="/myJobs">My Jobs</a>
+      <a href="/logout">
+        <i class="fas fa-sign-out-alt"></i>
+      </a>
+    {{else}}
+      <a href="/login">
+        <i class="fas fa-sign-in-alt"></i>
+      </a>
+      <a href="/signup">
+        <i class="fas fa-user-plus"></i> 
+      </a>
+    {{/if}}
   </div>
 </nav>

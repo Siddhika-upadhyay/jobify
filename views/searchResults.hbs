@@ -1,0 +1,11 @@
+<h2>Search Results for "{{query}}"</h2>
+
+{{#if jobs.length}}
+  <ul>
+    {{#each jobs}}
+      <li>{{this.title}} - {{this.company}}</li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>No jobs found for your search.</p>
+{{/if}}
