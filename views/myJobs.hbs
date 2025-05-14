@@ -1,0 +1,20 @@
+<h2>My Posted Jobs</h2>
+{{#if jobs.length}}
+{{#each jobs}}
+    <div class="job-card">
+      <h3>{{this.title}}</h3>
+      <p><strong>{{this.company}}</strong> - {{this.location}}</p>
+      <p>Salary: {{this.salary}}</p>
+      <p>{{this.description}}</p>
+      <div class="job-actions">
+        <a href="/jobs/edit/{{this._id}}" class="btn btn-primary">Edit</a>
+<form action="/jobs/delete/{{this._id}}" method="post" style="display:inline;">
+  <input type="hidden" name="_method" value="DELETE" />
+  <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this job?');">Delete</button>
+</form>
+      </div>
+    </div>
+  {{/each}}
+{{else}}
+  <p>You have not posted any jobs yet.</p>
+{{/if}}

@@ -13,8 +13,11 @@
   <div class="box">
     <h2>Looking to Hire?</h2>
     <p>Find qualified professionals for your team.</p>
-   <a href="/jobs/new" class="btn btn-primary post-job-btn">Post a Job</a>
-
+    {{#if user}}
+      <a href="/myJobs" class="btn btn-primary post-job-btn">Post a Job</a>
+    {{else}}
+      <a href="/signup?redirect=/myJobs" class="btn btn-primary post-job-btn">Post a Job</a>
+    {{/if}}
   </div>
 </div>
 
